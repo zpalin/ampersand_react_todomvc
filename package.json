@@ -34,6 +34,7 @@
     "ampersand-router": "^3.0.2",
     "ampersand-state": "^4.8.2",
     "bootstrap-sass": "^3.3.6",
+    "classnames": "^2.2.1",
     "jquery": "^2.1.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3"

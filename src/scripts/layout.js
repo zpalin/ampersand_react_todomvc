@@ -14,22 +14,13 @@ module.exports = React.createClass({
     me: React.PropTypes.object.isRequired
   },
 
-  // onClick (event) {
-  //   var pathname = localLinks.getLocalPathname(event)
-  //   if (pathname) {
-  //     event.preventDefault()
-  //     app.router.history.navigate(pathname, { trigger: true })
-  //   }
-  // },
-
-  handleSubmitNewTodo (e) {
-    e.preventDefault();
-    var newField = ReactDOM.findDOMNode(this.refs.newField);
-    var val = newField.value.trim();
+  handleSubmitNewTodo (event) {
+    event.preventDefault();
+    var val = this.refs.newField.value.trim();
 
     if (val) {
       this.props.me.todos.add({title: val});
-      newField.value = "";
+      this.refs.newField.value = "";
     }
   },
 
