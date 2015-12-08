@@ -23,17 +23,23 @@ module.exports = React.createClass({
     todo: React.PropTypes.object.isRequired
   },
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.editing) {
+      var node = this.refs.editField;
+      node.focus();
+      node.setSelectionRange(node.value.length, node.value.length);
+    }
+  },
+
   handleDestroyTodo (event) {
     this.props.todo.destroy();
   },
 
   handleToggle (event) {
-    var todo = this.props.todo;
-    todo.completed = !todo.completed;
+    this.props.todo.toggle();
   },
 
   handleEdit (event) {
-    this.refs.editField.focus();
     this.setState({editing: true});
   },
 

@@ -34,7 +34,12 @@ module.exports = AmpersandState.extend({
       default: false
     }
   },
-  destroy: function () {
+  
+  toggle () {
+    this.completed = !this.completed;
+  },
+
+  destroy () {
     if (this.collection) {
       this.collection.remove(this);
     }
